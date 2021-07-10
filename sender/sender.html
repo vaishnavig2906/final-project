@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../style.css">
+    </head>
+    <body>
+
+        <div id="input-div">
+            <center><input class="input" placeholder="Enter username..." type="text" id="username-input" /> <!--text field to enter username-->
+                    <br><br>
+            <button class="butt1" onclick="sendUsername()">Send</button> <!--button to send username-->
+            <button class="butt2" onclick="startCall()" disabled>Start Call</button></center> <!--disabled start call button...first, have to send username to make it enable-->
+        </div>
+
+        <div id="video-call-div"><!--this div is first disabled-->
+            <video muted id="local-video" autoplay></video><!--your video-->
+            <video id="remote-video" autoplay></video><!--peer's video-->
+
+            <!--mute audio and video buttons-->
+            <div class="call-action-div">
+                <button onclick="muteVideo()">Mute Video</button>
+                <button onclick="muteAudio()">Mute Audio</button>
+            </div>
+
+        </div>
+    
+        <script src="./sender.js"></script>
+    </body>
+
+</html>
