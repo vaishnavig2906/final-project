@@ -2,8 +2,6 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="js/jquery.min.js"></script>
-<script src="js/jsPDF/dist/jspdf.min.js"></script>
 <style>
 body {
   margin: 0;
@@ -132,12 +130,6 @@ h2{
 </style>
 </head>
 <body>
-  
-  <!-- <br>
-  <button id="cmd">Download PDF</button>
-  <br> -->
-  
-
 
 <div id="myDIV" class="header">
   <h2 style="margin:5px">My To Do List</h2>
@@ -145,10 +137,8 @@ h2{
   <span onclick="newElement()" class="addBtn">Add</span>
 </div>
 
-<!-- <div id="content">Hello</div> -->
 <ul id="myUL">
 </ul>
-<!-- <div id="editor"></div> -->
 
 <script>
 // Create a "close" button and append it to each list item
@@ -207,22 +197,6 @@ function newElement() {
   }
 }
 </script>
-<!-- <script>
-  var doc = new jsPDF();
-  var specialElementHandlers = {
-      '#editor': function (element, renderer) {
-          return true;
-      }
-  };
-
-  $('#cmd').click(function () {
-      doc.fromHTML($('#content').html(), 15, 15, {
-          'width': 170,
-              'elementHandlers': specialElementHandlers
-      });
-      doc.save('to-do list.pdf');
-  });
-</script> -->
 
 </body>
 </html>
