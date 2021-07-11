@@ -6,9 +6,10 @@
     <body>
 
         <div id="input-div">
-            <center><input class="input" placeholder="Enter username..." type="text" id="username-input" /> <!--text field to enter username-->
+            <center><h3 style="color: darkcyan;">Create a Room to start call</h3>
+            <input class="input" placeholder="Enter username..." type="text" id="username-input" /> <!--text field to enter username-->
                     <br><br>
-            <button class="butt1" onclick="sendUsername()">Send</button> <!--button to send username-->
+            <button class="butt1" onclick="sendUsername()">Create room</button> <!--button to send username-->
             <button class="butt2" onclick="startCall()" disabled>Start Call</button></center> <!--disabled start call button...first, have to send username to make it enable-->
         </div>
 
@@ -17,13 +18,13 @@
             <video id="remote-video" autoplay></video><!--peer's video-->
 
             <!--mute audio and video buttons-->
-            <div class="call-action-div">
-                <button onclick="muteVideo()">Mute Video</button>
-                <button onclick="muteAudio()">Mute Audio</button>
-                <a href="../whiteboard.html" target="_blank" rel="noopener noreferrer"><button>Whiteboard</button></a>
-                <a href="../todolist.html" target="_blank" rel="noopener noreferrer"><button>To Do List</button></a>
+            <div class="call-action-div" style="align-items: right; background-color: rgb(46, 45, 45); max-height: 30%; border-radius: 5px; top: 350px;">
+                <br>
+                <button onclick="muteVideo()">Mute Video</button><br><br>
+                <button onclick="muteAudio()">Mute Audio</button><br><br>
+                <a href="../whiteboard.html" target="_blank" rel="noopener noreferrer"><button>Whiteboard</button></a><br><br>
+                <a href="../todolist.html" target="_blank" rel="noopener noreferrer"><button>To Do List</button></a><br><br>    
             </div>
-
         </div>
     
         <script src="./sender.js"></script>
