@@ -3,4 +3,4 @@
 2) Use "npm run start" command in your terminal where the files are located and the website will work on localhost:8000.
 3) Go to your browser and go to localhost:8000, the website will get started.
 3) For further technical guide you can use this pdf.
-   Link :- https://drive.google.com/file/d/16QAhD3UAa4n-VQ4lRcYnlgdWfPejU418/view?usp=sharing
+   Link :- https://drive.google.com/file/d/1NfwPKj9Qv7294f46a0azQpZdJMTGV9MX/view?usp=sharing
