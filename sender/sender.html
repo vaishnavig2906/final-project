@@ -4,12 +4,16 @@
         <link rel="stylesheet" href="../style.css">
     </head>
     <body>
+        <div id="genrate-div">
+        <p><button id="generate" onclick="generate_()">Generate Unique ID</button></p> <!--button to generate unique room ids-->
+        <code id="output" style="color: red; font-size: 30px;"></code>
+        </div>
 
         <div id="input-div">
-            <center><h3 style="color: darkcyan;">Create a Room to start call</h3>
-            <input class="input" placeholder="Enter username..." type="text" id="username-input" /> <!--text field to enter username-->
+            <center><h3 style="color: darkcyan;">Generate Unique ID then Create a Room to start call</h3>
+            <input class="input" placeholder="Generate Unique ID..." type="text" id="username-input" /> <!--text field to enter username-->
                     <br><br>
-            <button class="butt1" onclick="sendUsername()">Create room</button> <!--button to send username-->
+            <button class="butt1" onclick="sendUsername()" disabled>Create room</button> <!--disable Create room button...to send username-->
             <button class="butt2" onclick="startCall()" disabled>Start Call</button></center> <!--disabled start call button...first, have to send username to make it enable-->
         </div>
 
@@ -17,7 +21,7 @@
             <video muted id="local-video" autoplay></video><!--your video-->
             <video id="remote-video" autoplay></video><!--peer's video-->
 
-            <!--mute audio and video buttons-->
+            <!--feature buttons-->
             <div class="call-action-div" style="align-items: right; background-color: rgb(46, 45, 45); max-height: 30%; border-radius: 5px; top: 350px;">
                 <br>
                 <button onclick="muteVideo()">Mute Video</button><br><br>
@@ -26,7 +30,50 @@
                 <a href="../todolist.html" target="_blank" rel="noopener noreferrer"><button>To Do List</button></a><br><br>    
             </div>
         </div>
-    
+
+        <script>
+            //script to generate random id
+            (function() {
+                function IDGenerator() {
+                
+                    this.length = 8;
+                    this.timestamp = +new Date;
+                    
+                    var _getRandomInt = function( min, max ) {
+                        return Math.floor( Math.random() * ( max - min + 1 ) ) + min;
+                    }
+                    
+                    this.generate = function() {
+                        var ts = this.timestamp.toString();
+                        var parts = ts.split( "" ).reverse();
+                        var id = "";
+                        
+                        for( var i = 0; i < this.length; ++i ) {
+                            var index = _getRandomInt( 0, parts.length - 1 );
+                            id += parts[index];	 
+                        }
+                        
+                        return id;
+                    }
+
+                    
+                }
+
+                document.addEventListener( "DOMContentLoaded", function() {
+                    var btn = document.querySelector( "#generate" ),
+                        output = document.querySelector( "#output" ),
+                        val=document.querySelector("#username-input");
+
+                    btn.addEventListener( "click", function() {
+                        var generator = new IDGenerator();
+                        output.innerHTML = generator.generate();
+                        val.value=output.innerHTML
+                        
+                    }, false); 
+                });
+            })();
+        </script>
+        
         <script src="./sender.js"></script>
     </body>
 

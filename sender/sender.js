@@ -17,6 +17,13 @@ function handleSignallingData(data) {
 
 let username
 let button2
+let button1
+
+function generate_(){
+    button1=document.querySelector(".butt1")
+    button1.disabled=false //Create room button is enabled
+}
+
 
 //function gets executed when send button is cilcked in sender.html
 function sendUsername() {
