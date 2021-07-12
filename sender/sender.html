@@ -11,10 +11,13 @@
 
         <div id="input-div">
             <center><h3 style="color: darkcyan;">Generate Unique ID then Create a Room to start call</h3>
-            <input class="input" placeholder="Generate Unique ID..." type="text" id="username-input" /> <!--text field to enter username-->
+            <input class="input" placeholder="Generate Unique ID..." type="text" id="username-input" /> 
+            <button onclick="myFunction()">Copy</button><!--text field to enter username--></center>
                     <br><br>
-            <button class="butt1" onclick="sendUsername()" disabled>Create room</button> <!--disable Create room button...to send username-->
-            <button class="butt2" onclick="startCall()" disabled>Start Call</button></center> <!--disabled start call button...first, have to send username to make it enable-->
+            <div id="create-buttons">
+                <button class="butt1" onclick="sendUsername()" disabled>Create room</button> <!--disable Create room button...to send username-->
+                <button class="butt2" onclick="startCall()" disabled>Start Call</button></center> <!--disabled start call button...first, have to send username to make it enable-->
+            </div>    
         </div>
 
         <div id="video-call-div"><!--this div is first disabled-->

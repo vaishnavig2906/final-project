@@ -24,6 +24,12 @@ function generate_(){
     button1.disabled=false //Create room button is enabled
 }
 
+function myFunction() {
+    var copyText = document.getElementById("username-input");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999)
+    document.execCommand("copy");
+}
 
 //function gets executed when send button is cilcked in sender.html
 function sendUsername() {
